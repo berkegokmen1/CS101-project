@@ -164,7 +164,7 @@ public class TicTacToe {
             // Check if the game ended after each move
             result = checkBoard();
 
-            if ( moves.size() == 0 ) {
+            if ( result == 'C' && moves.size() == 0 ) {
                 // Game draw
                 result = 'D';
             }
