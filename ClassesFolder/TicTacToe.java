@@ -2,6 +2,17 @@ package ClassesFolder;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+/**
+ * @(#)TicTacToe.java
+ * 
+ * TicTacToe class that holds an array board and displays it
+ * using the functionality defined in class.
+ *
+ * @author Ahmet Berke Gökmen 
+ * @date 2021/5/2
+ * @version 0.1
+ */
 public class TicTacToe {
     // Create class level static scanner
     public static Scanner sc = new Scanner( System.in );
@@ -11,6 +22,10 @@ public class TicTacToe {
     private ArrayList<Log> log;
     private char turn;
 
+    /**
+     * Constructor for TicTacToe class
+     * @param none
+	 */
     public TicTacToe() {
         board = new String[9];
         log = new ArrayList<Log>();
@@ -19,6 +34,12 @@ public class TicTacToe {
         initializeBoard();
     }
 
+    /**
+     * Prints the moves that were made in the game
+     * 
+     * @param  none
+	 * @return none
+	 */
     public void showLogs() {
         String logs = "\n";
         
@@ -33,12 +54,24 @@ public class TicTacToe {
         System.out.println( logs + "\n" );
     }
 
+    /**
+     * Initializes the game board 
+     * 
+     * @param  none
+	 * @return none
+	 */
     private void initializeBoard() {
         for ( int i = 0; i < 9; i++ ) {
             board[i] = "   ";
         }
     }
 
+    /**
+     * Displays the game board 
+     * 
+     * @param  none
+	 * @return none
+	 */
     private void displayBoard() {
         String strBoard = "";
 
@@ -57,6 +90,13 @@ public class TicTacToe {
         System.out.println( strBoard );
     }
 
+    /**
+     * Adds the move to the logs array and displays it in board
+     * 
+     * @param  move X or O 
+     * @param  square index of the square
+	 * @return none
+	 */
     private void makeMove( char move, int square ) {
         board[square] = " " + move + " ";
 
@@ -73,10 +113,16 @@ public class TicTacToe {
     
     }
 
+    /**
+     * Checks if the game has ended or not
+     * 'X' => X wins
+     * 'O' => O wins
+     * 'C' => Continue
+     * 
+     * @param  none
+	 * @return none
+	 */
     private char checkBoard() {
-        // 'X' => X wins
-        // 'O' => O wins
-        // 'C' => Continue
 
         // Check rows
         for ( int r = 0; r <= 6; r += 3 ) {
@@ -105,6 +151,12 @@ public class TicTacToe {
         return 'C';
     }
 
+    /**
+     * Shows the board with square indexes
+     * 
+     * @param  none
+	 * @return none
+	 */
     private void showBoardPositions() {
         for ( int i = 0; i < 9; i++ ) {
             board[i] = " " + i + " ";
@@ -121,11 +173,23 @@ public class TicTacToe {
         initializeBoard();
     }
 
+    /**
+     * Clears the console
+     * 
+     * @param  none
+	 * @return none
+	 */
     private void clear() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
+    /**
+     * Initializes the game
+     * 
+     * @param  none
+	 * @return none
+	 */
     public void play() {
         // Local game variables
         int c;
@@ -188,6 +252,12 @@ public class TicTacToe {
         }
     }
 
+    /**
+     * Resets the game
+     * 
+     * @param  none
+	 * @return none
+	 */
     public void reset() {
         board = new String[9];
         log = new ArrayList<Log>();
@@ -195,5 +265,4 @@ public class TicTacToe {
 
         initializeBoard();
     }
-    
 }

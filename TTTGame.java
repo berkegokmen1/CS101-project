@@ -1,10 +1,26 @@
 import ClassesFolder.*;
 import java.util.Scanner;
 
+/**
+ * @(#)TTTGame.java
+ * 
+ * Java application that uses functionality defined in Log and TicTacToe classes
+ * to show and play the board game.
+ *
+ * @author Ahmet Berke Gökmen 
+ * @date 2021/5/2
+ * @version 0.1
+ */
 public class TTTGame {
     // Declare scanner
     static Scanner sc = TicTacToe.sc;
 
+    /**
+     * Displays the game menu
+     * 
+     * @param  none
+	 * @return none
+	 */
     public static void displayMenu() {
         String menu = "\nMenu: " 
                     + "\n1 - Play again"
@@ -41,6 +57,5 @@ public class TTTGame {
         } while ( nav != 3 && nav != 2 );
 
         System.out.println( "Thanks for playing." );
-    
     }
 }
