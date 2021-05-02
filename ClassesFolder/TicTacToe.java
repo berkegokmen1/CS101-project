@@ -19,6 +19,20 @@ public class TicTacToe {
         initializeBoard();
     }
 
+    public void showLogs() {
+        String logs = "\n";
+        
+        logs += "*".repeat(15) + " GAME LOG " + "*".repeat(15) + "\n";
+
+        for ( int i = 0; i < log.size(); i++ ) {
+            logs += (i + 1) + " - " + log.get(i);
+        }
+
+        logs += "*".repeat(40);
+
+        System.out.println( logs + "\n" );
+    }
+
     private void initializeBoard() {
         for ( int i = 0; i < 9; i++ ) {
             board[i] = "   ";
@@ -47,7 +61,7 @@ public class TicTacToe {
         board[square] = " " + move + " ";
 
         // Update logs
-        // log.add(e);
+        log.add( new Log(move, square) );
 
         // Change turn
         if ( turn == 'X' ) {
@@ -85,7 +99,7 @@ public class TicTacToe {
         
         // Check opposite diagonal
         if ( !board[2].equals( "   " ) && board[2].equals( board[4] ) && board[2].equals( board[6] ) ) {
-            return board[0].trim().charAt(0);
+            return board[2].trim().charAt(0);
         }
 
         return 'C';
