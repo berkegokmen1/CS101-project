@@ -116,7 +116,11 @@ public class TicTacToe {
         // Local game variables
         int c;
         char result;
-        
+        ArrayList<Integer> moves = new ArrayList<Integer>(9);
+
+        // Fill in the arraylist
+        for ( int i = 0; i < 9; i++ ) { moves.add( (Integer) i ); }
+
         // Introduction
         showBoardPositions();
 
@@ -126,6 +130,8 @@ public class TicTacToe {
         do {
             // Clear the console
             clear();
+
+            // Display the board
             System.out.println( "TIC TAC TOE\n\n" );
             displayBoard();
             
@@ -133,12 +139,30 @@ public class TicTacToe {
             do {
                 System.out.print( "\nEnter square number for " + turn + ": " );
                 c = sc.nextInt();
-            } while ( c != 0 && c != 1 && c != 2 && c != 3 && c != 4 && c != 5 && c != 6 && c != 7 && c != 8 );
+            } while ( moves.indexOf( (Integer) c ) == -1 );
             
+            // Make the move
             makeMove( turn, c );
 
+            // Remove possible move from the moves list
+            moves.remove( (Integer) c );
+
+            // Check if the game ended after each move
             result = checkBoard();
         } while ( result == 'C' );
+
+        // Display winning board
+        clear();
+        System.out.println( "TIC TAC TOE - Game Finished\n\n" );
+        displayBoard();
+
+        // Show the result after the game ended
+        if ( result == 'X' ) {
+            System.out.println( "\nX wins!" );
+        }
+        else {
+            System.out.println( "\nO wins!" );
+        }
     }
 
     public void reset() {
