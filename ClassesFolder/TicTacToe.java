@@ -24,6 +24,10 @@ public class TicTacToe {
 
     /**
      * Constructor for TicTacToe class
+     * Initializes the board to an array of Strings
+     * Initializes the log to an array of Log objects
+     * Assigns the turn to X
+     * 
      * @param none
 	 */
     public TicTacToe() {
@@ -35,7 +39,7 @@ public class TicTacToe {
     }
 
     /**
-     * Prints the moves that were made in the game
+     * Prints the moves that were made in the game one by one
      * 
      * @param  none
 	 * @return none
@@ -55,7 +59,8 @@ public class TicTacToe {
     }
 
     /**
-     * Initializes the game board 
+     * Initializes the game board
+     * Each square will be initialized to a string with 3 spaces
      * 
      * @param  none
 	 * @return none
@@ -67,7 +72,7 @@ public class TicTacToe {
     }
 
     /**
-     * Displays the game board 
+     * Displays the game board
      * 
      * @param  none
 	 * @return none
@@ -153,6 +158,7 @@ public class TicTacToe {
 
     /**
      * Shows the board with square indexes
+     * to make an introduction to how to play the game
      * 
      * @param  none
 	 * @return none
