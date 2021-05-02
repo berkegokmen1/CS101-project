@@ -163,6 +163,12 @@ public class TicTacToe {
 
             // Check if the game ended after each move
             result = checkBoard();
+
+            if ( moves.size() == 0 ) {
+                // Game draw
+                result = 'D';
+            }
+
         } while ( result == 'C' );
 
         // Display winning board
@@ -174,8 +180,11 @@ public class TicTacToe {
         if ( result == 'X' ) {
             System.out.println( "\nX wins!" );
         }
-        else {
+        else if ( result == 'O' ) {
             System.out.println( "\nO wins!" );
+        }
+        else {
+            System.out.println( "\nEverybody wins!" );
         }
     }
 
