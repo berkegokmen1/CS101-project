@@ -138,7 +138,7 @@ public class TicTacToe {
 
         // Check columns
         for ( int c = 0; c <= 2; c++ ) {
-            if ( !board[c].equals( "   " ) && board[c].equals( board[c + 3] ) && board[c].equals( board[c+6] ) ) {
+            if ( !board[c].equals( "   " ) && board[c].equals( board[c + 3] ) && board[c].equals( board[c + 6] ) ) {
                 return board[c].trim().charAt(0);
             }
         }
